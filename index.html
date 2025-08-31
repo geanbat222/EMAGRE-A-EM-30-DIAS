@@ -71,14 +71,64 @@
       padding:24px 16px 48px;
       background:#f9f9f9;
     }
-  </style>
+  <style>
+  section h2
+    margin-bottom:12px:
+  footer{
+    text-align:center;
+    font-size:.9rem;
+    color:#666;
+    padding:24px 16px 48px;
+    background:#f9f9f9;
+  }
+
+  /* Botão CTA */
+  .botao-cta{
+    background-color:#fff;
+    color:#f14161;
+    padding:15px 30px;
+    font-size:1rem;
+    font-weight:700;
+    text-decoration:none;
+    border-radius:8px;
+    display:inline-block;
+    box-shadow:0 4px 8px rgba(0,0,0,.2);
+    transition:background-color .25s, color .25s, box-shadow .25s, transform .25s;
+    cursor:pointer;
+    border:0;
+  }
+
+  .botao-cta:hover{
+    background-color:#f14161;
+    color:#fff;
+    transform:scale(1.05);
+    box-shadow:0 6px 12px rgba(0,0,0,.3);
+  }
+
+  .botao-cta:active{
+    transform:scale(.98);
+  }
+
+  .botao-cta:focus-visible{
+    outline:2px solid #fff;
+    outline-offset:2px;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Emagreça em 30 Dias</h1>
-    <p>Transforme seu corpo e sua mente com dicas simples e eficazes.</p>
-  </header>
-  <main>
+  <!-- Hero Section -->
+  <section style="background-color:#f14161; color:#fff; text-align:center; padding:60px 20px;">
+    <h1 style="font-size:2.5rem; margin-bottom:20px;">Emagreça em 30 Dias</h1>
+    <p style="font-size:1.2rem; margin-bottom:30px;">
+      Transforme seu corpo e sua mente com dicas simples e eficazes.
+    </p>
+    <a href="SEU_LINK_AQUI" class="botao-cta">
+      📘 Garantir meu ebook agora
+    </a>
+  </section>
+
+  <!-- Conteúdo principal -->
+  <main style="padding:40px 20px;">
     <h2>Comece hoje mesmo</h2>
     <p>Descubra como é possível perder peso com saúde, sem dietas malucas e de forma sustentável.</p>
     <!DOCTYPE html>
