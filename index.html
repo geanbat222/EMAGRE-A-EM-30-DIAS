@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emagreça em 30 Dias</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #ff6a00, #ee0979);
-      color: #fff;
-      text-align: center;
+    :root{
+      --primaria:#f41616;
+      --primaria-hover:#c81010;
+      --texto:#222;
     }
-    header {
-      padding: 40px 20px;
+
+    *{box-sizing:border-box; margin:0; padding:0}
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--texto);
+      line-height:1.6;
+      font-size:1.05rem;
+      /* 🎨 Fundo com gradiente */
+      background: linear-gradient(180deg, #ffeaea, #fff);
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+
+    header{
+      padding:64px 20px;
+      text-align:center;
+      background:linear-gradient(90deg, #f41616, #f64b4b);
+      color:#fff;
     }
-    header p {
-      font-size: 1.2rem;
+    header h1{margin-bottom:12px; font-size:2.4rem}
+    header p{margin-bottom:20px; opacity:.95}
+
+    .btn{
+      background-color:#fff;
+      color:var(--primaria);
+      padding:15px 30px;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+      display:inline-block;
+      transition:all .2s ease;
+      margin:0 10px;
     }
-    main {
-      padding: 30px 20px;
+    .btn:hover{
+      background-color:var(--primaria-hover);
+      color:#fff;
     }
-    main h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
+
+    main{
+      max-width:900px;
+      margin:32px auto;
+      padding:0 20px;
     }
-    main p {
-      font-size: 1rem;
-      margin-bottom: 20px;
+
+    section{
+      background:#fff;
+      border:1px solid #eee;
+      border-radius:12px;
+      padding:24px;
+      margin-bottom:32px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.05);
     }
-    .botao {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #fff;
-      color: #ee0979;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .botao:hover {
-      background-color: #ffebf2;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: rgba(0,0,0,0.2);
-      font-size: 0.9rem;
+    section h2{margin-bottom:12px}
+
+    footer{
+      text-align:center;
+      font-size:.9rem;
+      color:#666;
+      padding:24px 16px 48px;
+      background:#f9f9f9;
     }
   </style>
 </head>
@@ -160,7 +178,7 @@
       <p>Ebook completo + checklist imprimível + acesso a atualizações futuras.</p>
     </section>
     <div class="cta">
-  <a class="botao" href="#">Garantir meu ebook agora</a>
+  <a class="botao" href="https://pay.hotmart.com/H101662874C">Garantir meu ebook agora</a>
 </div>
   </main>
 
@@ -263,7 +281,7 @@
   <header>
     <h1>Emagreça em 30 Dias</h1>
     <p>Transforme seu corpo e sua mente com dicas simples, práticas e eficazes.</p>
-    <a href="#" class="btn">Quero emagrecer agora</a>
+    <a href="https://pay.hotmart.com/H101662874C" class="btn">Quero emagrecer agora</a>
   </header>
 
   <section class="benefits">
@@ -295,7 +313,7 @@
   <section>
     <h2>🚀 Pronto para transformar sua vida?</h2>
     <p>Não adie mais seus resultados. Comece hoje mesmo!</p>
-    <a href="#" class="btn">Garantir meu acesso agora</a>
+    <a href="https://pay.hotmart.com/H101662874C" class="btn">Garantir meu acesso agora</a>
   </section>
 
   <footer>
