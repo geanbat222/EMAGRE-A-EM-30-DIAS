@@ -6,6 +6,14 @@
   <title>Emagreça em 30 Dias</title>
   <meta name="description" content="Ebook Emagreça em 30 Dias: plano simples e eficaz para perder peso com saúde e manter os resultados." />
 
+  <!-- Open Graph (compartilhamento) -->
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Emagreça em 30 Dias">
+  <meta property="og:description" content="Plano simples e eficaz para perder peso com saúde.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geanbat222.github.io/EMAGRE-A-EM-30-DIAS/">
+  <meta property="og:image" content="https://geanbat222.github.io/EMAGRE-A-EM-30-DIAS/capa.jpg">
+
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -18,7 +26,6 @@
       --maxw:980px;
     }
 
-    /* Base */
     *{ box-sizing:border-box; }
     html,body{ margin:0; padding:0; }
     body{
@@ -30,26 +37,19 @@
     h1,h2,h3{ margin:0 0 12px; letter-spacing:.2px; }
     p{ margin:0 0 16px; color:#444; }
 
-    /* Layout */
-    .container{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:0 20px;
-    }
+    .container{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
     section{ margin:48px 0; }
     section h2{ margin-bottom:8px; }
 
-    /* Hero */
     .hero{
       background:var(--primaria);
       color:#fff;
       text-align:center;
       padding:60px 0;
-      margin:0; /* cola no topo */
+      margin:0;
     }
     .hero p{ color:#fff; opacity:.95; }
 
-    /* Botão */
     .botao,
     .botao:link,
     .botao:visited{
@@ -71,9 +71,7 @@
       transform:translateY(-2px);
       box-shadow:0 10px 20px rgba(0,0,0,.22);
     }
-    .botao:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
 
-    /* Cartões simples */
     .card{
       background:#fff;
       border:1px solid #eee;
@@ -81,17 +79,11 @@
       padding:24px;
     }
 
-    /* Lista bullets */
-    ul.check{
-      padding-left:18px;
-      margin:0;
-    }
+    ul.check{ padding-left:18px; margin:0; }
     ul.check li{ margin:8px 0; }
 
-    /* FAQ */
     .faq h3{ margin:16px 0 6px; font-size:1.05rem; }
 
-    /* Rodapé */
     footer{
       text-align:center;
       font-size:.9rem;
@@ -99,8 +91,17 @@
       padding:24px 16px 48px;
       background:#f9f9f9;
     }
+    footer a{ color:#666; text-decoration:none; margin:0 8px; }
+    footer a:hover{ text-decoration:underline; }
 
-    /* Responsivo */
+    #topoBtn{
+      position:fixed; right:16px; bottom:16px; z-index:9998;
+      background:#fff; color:var(--primaria); border:0; border-radius:10px;
+      padding:12px 14px; box-shadow:0 8px 18px rgba(0,0,0,.2);
+      cursor:pointer; display:none; font-weight:700;
+    }
+    #topoBtn:hover{ background:var(--primaria); color:#fff; }
+
     @media (max-width:640px){
       h1{ font-size:2rem; }
       .botao{ width:100%; text-align:center; }
@@ -144,18 +145,34 @@
     </div>
   </section>
 
+  <!-- Depoimentos -->
+  <section>
+    <div class="container card">
+      <h2>Resultados de quem já leu</h2>
+      <p style="margin-bottom:14px;">Alguns depoimentos de leitores:</p>
+      <div style="display:grid; gap:16px;">
+        <blockquote style="margin:0; border-left:4px solid var(--primaria); padding-left:12px;">
+          “Perdi 4kg em 3 semanas ajustando a rotina. Simples e direto!” — <strong>Ana S.</strong>
+        </blockquote>
+        <blockquote style="margin:0; border-left:4px solid var(--primaria); padding-left:12px;">
+          “Curti os treinos rápidos. Consigo fazer antes do trabalho.” — <strong>Marcos R.</strong>
+        </blockquote>
+        <blockquote style="margin:0; border-left:4px solid var(--primaria); padding-left:12px;">
+          “O plano é realista. Nada de loucuras, dá pra manter.” — <strong>Bianca L.</strong>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section>
     <div class="container">
       <h2>Perguntas frequentes</h2>
-
       <div class="faq">
         <h3>Em quanto tempo verei resultados?</h3>
         <p>Seguindo as orientações, muitos leitores relatam mudanças já nas primeiras semanas.</p>
-
         <h3>O pagamento é seguro?</h3>
         <p>Sim. O pagamento é processado pela Hotmart, uma das maiores plataformas do Brasil.</p>
-
         <h3>Posso acessar no celular?</h3>
         <p>Sim. O material é totalmente digital e compatível com celular, tablet e computador.</p>
       </div>
@@ -174,11 +191,25 @@
   <!-- Rodapé -->
   <footer>
     © <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.
+    <div style="margin-top:8px;">
+      <a href="politica.html">Política de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="mailto:emagreca329@gmai.com">Contato</a>
+    </div>
   </footer>
 
+  <!-- Voltar ao topo -->
+  <button id="topoBtn" aria-label="Voltar ao topo">↑ Topo</button>
+
   <script>
-    // Ano automático no rodapé
     document.getElementById('ano').textContent = new Date().getFullYear();
+    const topoBtn = document.getElementById('topoBtn');
+    window.addEventListener('scroll', () => {
+      topoBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+    });
+    topoBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
