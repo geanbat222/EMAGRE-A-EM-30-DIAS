@@ -414,19 +414,9 @@
   topoBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+  
 </script>
-  // Atualiza automaticamente o ano do rodapé
-  document.getElementById("ano").textContent = new Date().getFullYear();
-
-  // Mostrar/esconder botão
-  const topoBtn = document.getElementById("topoBtn");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      topoBtn.classList.add("mostrar");
-    } else {
-      topoBtn.classList.remove("mostrar");
-    }
-  });
+  
 
   // Ação do botão
   topoBtn.addEventListener("click", () => {
