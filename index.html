@@ -2,68 +2,96 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emagreça em 30 Dias</title>
+  <meta name="description" content="Ebook Emagreça em 30 Dias: plano simples e eficaz para perder peso com saúde e manter os resultados." />
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --primaria:#f14161;
       --primaria-hover:#d9364d;
       --texto:#222;
+      --bg:#ffffff;
+      --maxw:980px;
     }
 
-    *{box-sizing:border-box; margin:0; padding:0}
-
+    /* Base */
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
     body{
-      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
       color:var(--texto);
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
       line-height:1.6;
-      font-size:1.05rem;
-      /* 🎨 Fundo com gradiente */
-      background: linear-gradient(180deg, #ffeaea, #fff);
     }
+    h1,h2,h3{ margin:0 0 12px; letter-spacing:.2px; }
+    p{ margin:0 0 16px; color:#444; }
 
-    header{
-      padding:64px 20px;
-      text-align:center;
-      background:linear-gradient(90deg, #f41616, #f64b4b);
-      color:#fff;
-    }
-    header h1{margin-bottom:12px; font-size:2.4rem}
-    header p{margin-bottom:20px; opacity:.95}
-
-    .btn{
-      background-color:#fff;
-      color:var(--primaria);
-      padding:15px 30px;
-      text-decoration:none;
-      border-radius:10px;
-      font-weight:bold;
-      display:inline-block;
-      transition:all .2s ease;
-      margin:0 10px;
-    }
-    .btn:hover{
-      background-color:var(--primaria-hover);
-      color:#fff;
-    }
-
-    main{
-      max-width:900px;
-      margin:32px auto;
+    /* Layout */
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
       padding:0 20px;
     }
+    section{ margin:48px 0; }
+    section h2{ margin-bottom:8px; }
 
-    section{
-      background:rgba(255,255,255,0.2;
-      border:none;
+    /* Hero */
+    .hero{
+      background:var(--primaria);
+      color:#fff;
+      text-align:center;
+      padding:60px 0;
+      margin:0; /* cola no topo */
+    }
+    .hero p{ color:#fff; opacity:.95; }
+
+    /* Botão */
+    .botao,
+    .botao:link,
+    .botao:visited{
+      background:#fff;
+      color:var(--primaria);
+      padding:16px 28px;
+      font-weight:700;
+      text-decoration:none;
+      border-radius:10px;
+      display:inline-block;
+      line-height:1;
+      box-shadow:0 6px 14px rgba(0,0,0,.18);
+      transition:transform .2s, box-shadow .2s, background .2s, color .2s;
+      border:0;
+    }
+    .botao:hover{
+      background:var(--primaria);
+      color:#fff;
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(0,0,0,.22);
+    }
+    .botao:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
+
+    /* Cartões simples */
+    .card{
+      background:#fff;
+      border:1px solid #eee;
       border-radius:12px;
       padding:24px;
-      margin-bottom:32px;
-      box-shadow:none
     }
-    section h2{margin-bottom:12px}
 
+    /* Lista bullets */
+    ul.check{
+      padding-left:18px;
+      margin:0;
+    }
+    ul.check li{ margin:8px 0; }
+
+    /* FAQ */
+    .faq h3{ margin:16px 0 6px; font-size:1.05rem; }
+
+    /* Rodapé */
     footer{
       text-align:center;
       font-size:.9rem;
@@ -71,456 +99,86 @@
       padding:24px 16px 48px;
       background:#f9f9f9;
     }
-  <style>
-  section h2
-    margin-bottom:12px:
-  footer{
-    text-align:center;
-    font-size:.9rem;
-    color:#666;
-    padding:24px 16px 48px;
-    background:#f9f9f9;
-  }
 
-  /* Botão CTA */
-  /* CTA – versão branca (secundária) */
-.botao-cta,
-.botao-cta:link,
-.botao-cta:visited{
-  background:#fff;
-  color:#f14161;
-  padding:16px 28px;
-  font-size:1.05rem;
-  font-weight:700;
-  text-decoration:none;
-  border-radius:10px;
-  display:inline-block;
-  line-height:1;
-  box-shadow:0 6px 14px rgba(0,0,0,.18);
-  transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-  border:0;
-}
-
-/* CTA – hover comum */
-.botao-cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(0,0,0,.22);
-}
-
-/* CTA – PRIMÁRIO (vermelho com texto branco) */
-.botao-cta.primario,
-.botao-cta.primario:link,
-.botao-cta.primario:visited{
-  background:#f14161;
-  color:#fff;
-}
-
-/* Hover do primário: só escurece um pouco */
-.botao-cta.primario:hover{
-  background:#d9364d;
-}
-
-/* Toques de acessibilidade */
-.botao-cta:focus-visible{
-  outline:3px solid rgba(255,255,255,.9);
-  outline-offset:3px;
-    
-  }
-</style>
-</head>
-<body>
-<!-- Hero Section -->
-<section style="background-color:#f14161; text-align:center; padding:60px 20px; color:#fff;">
-  <h1 style="font-size:2.5rem; margin-bottom:20px;">Emagreça em 30 Dias</h1>
-  <p style="font-size:1.2rem; margin-bottom:30px;">
-    Transforme seu corpo e sua mente com dicas simples e eficazes.
-  </p>
-
-  <a href="https://pay.hotmart.com/H101662874C" class="botao">
-    📘 Garantir meu ebook agora
-  </a>
-</section>
-
-  <!-- Conteúdo principal -->
-  <main style="padding:40px 20px;">
-    <h2>Comece hoje mesmo</h2>
-    <p>Descubra como é possível perder peso com saúde, sem dietas malucas e de forma sustentável.</p>
-    <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emagreça em 30 Dias</title>
-
-  <style>
-    :root{
-      --primaria:#f41616;
-      --primaria-hover:#f4422b;
-      --texto:#222;
-      --bg:#fafafa;
-    }
-
-    *{box-sizing:border-box}
-    body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  color:var(--texto);
-  background:var(--bg);
-  line-height:1.6;
-  font-size:1.05rem; /* ← aumenta um pouco o tamanho da fonte */
-    }
-
-    header{
-      padding:48px 20px;
-      text-align:center;
-      background:linear-gradient(180deg, #fff, #f7f7f7);
-      border-bottom:1px solid #eee;
-    }
-    header h1{margin:0 0 8px 0; font-size:2rem}
-    header p{margin:0; opacity:.9}
-
-    main{max-width:900px; margin:32px auto; padding:0 20px}
-
-    .cta{
-      margin-top:24px;
-    }
-    .botao{
-      background-color:var(--primaria);
-      color:#fff;
-      padding:15px 30px;
-      text-decoration:none;
-      border-radius:10px;
-      display:inline-block;
-      font-weight:bold;
-      transition:background-color .2s ease, transform .06s ease;
-    }
-    .botao:hover{background-color:var(--primaria-hover)}
-    .botao:active{transform:scale(.98)}
-
-   section{
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:24px;
-  margin-top:24px;
-  margin-bottom:32px; /* <-- espaçamento extra entre seções */
-    }
-    section h2{margin-top:0}
-
-    footer{
-      text-align:center;
-      font-size:.9rem;
-      color:#666;
-      padding:24px 16px 48px;
+    /* Responsivo */
+    @media (max-width:640px){
+      h1{ font-size:2rem; }
+      .botao{ width:100%; text-align:center; }
+      .hero{ padding:48px 0; }
+      section{ margin:36px 0; }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <!-- Seção Final -->
-<section style="background-color:#f14161; text-align:center; padding:60px 20px; color:#fff;">
-  <h2 style="font-size:2rem; margin-bottom:20px;">Está pronto para mudar de vida?</h2>
-  <p style="font-size:1.2rem; margin-bottom:30px;">
-    Um guia prático para emagrecer com equilíbrio, sem abrir mão dos alimentos que você gosta.
-  </p>
 
-  <a href="https:https://pay.hotmart.com/H101662874C" class="botao">
-    📘 Garantir meu ebook agora
-  </a>
-</section>
-  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 style="font-size:2.5rem;">Emagreça em 30 Dias</h1>
+      <p style="font-size:1.1rem; margin:12px 0 24px;">
+        Transforme seu corpo e sua mente com dicas simples e eficazes.
+      </p>
+      <a href="https://pay.hotmart.com/H101602874C" class="botao">📘 Garantir meu ebook agora</a>
+    </div>
+  </section>
 
-  <main>
-    <section>
+  <!-- Seção 1 -->
+  <section>
+    <div class="container">
       <h2>Comece hoje mesmo</h2>
       <p>Descubra como é possível perder peso com saúde, sem dietas malucas e de forma sustentável.</p>
-      <ul>
-        <li>Plano alimentar simples de seguir</li>
-        <li>Treinos rápidos para iniciantes</li>
-        <li>Dicas de motivação e constância</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>O que você vai receber</h2>
-      <p>Ebook completo + checklist imprimível + acesso a atualizações futuras.</p>
-    </section>
-    <div class="cta">
-  <a class="botao" href="https://pay.hotmart.com/H101662874C">Garantir meu ebook agora</a>
-</div>
-  </main>
-<!-- FAQ -->
-<section id="faq" style="padding:50px 20px; background:#f9f9f9; margin-top:40px; border-radius:8px;">
-  <h2 style="text-align:center; color:#333; margin-bottom:30px;">❓ Perguntas Frequentes</h2>
-
-  <div style="margin-bottom:20px;">
-    <h3 style="color:#f14161;">📖 O que vou receber ao comprar?</h3>
-    <p>Você receberá o ebook completo, um checklist imprimível e acesso às atualizações futuras.</p>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <h3 style="color:#f14161;">⏳ Em quanto tempo verei resultados?</h3>
-    <p>Seguindo as orientações, muitos leitores relatam mudanças já nas primeiras 2 semanas.</p>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <h3 style="color:#f14161;">🔒 O pagamento é seguro?</h3>
-    <p>Sim! O pagamento é processado pela Hotmart, uma das maiores plataformas de vendas digitais do Brasil.</p>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <h3 style="color:#f14161;">📱 Posso acessar no celular?</h3>
-    <p>Sim, o material é totalmente digital e compatível com celular, computador ou tablet.</p>
-  </div>
- 
+    </div>
   </section>
+
+  <!-- O que você vai aprender -->
+  <section>
+    <div class="container card">
+      <h2>O que você vai aprender</h2>
+      <ul class="check">
+        <li>Plano alimentar simples e flexível para 30 dias.</li>
+        <li>Treinos rápidos para fazer em casa (15–20 min).</li>
+        <li>Receitas práticas que cabem na rotina.</li>
+        <li>Estratégias de motivação e constância.</li>
+        <li>Como manter os resultados sem sofrimento.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+
+      <div class="faq">
+        <h3>Em quanto tempo verei resultados?</h3>
+        <p>Seguindo as orientações, muitos leitores relatam mudanças já nas primeiras semanas.</p>
+
+        <h3>O pagamento é seguro?</h3>
+        <p>Sim. O pagamento é processado pela Hotmart, uma das maiores plataformas do Brasil.</p>
+
+        <h3>Posso acessar no celular?</h3>
+        <p>Sim. O material é totalmente digital e compatível com celular, tablet e computador.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section style="background:var(--primaria); color:#fff; text-align:center; padding:56px 0;">
+    <div class="container">
+      <h2 style="font-size:2rem;">Está pronto para mudar de vida?</h2>
+      <p style="margin:8px 0 24px;">Um guia prático para emagrecer com equilíbrio, sem abrir mão dos alimentos que você gosta.</p>
+      <a href="https://pay.hotmart.com/H101602874C" class="botao">📘 Garantir meu ebook agora</a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
   <footer>
     © <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.
   </footer>
 
   <script>
-    // Atualiza o ano do rodapé automaticamente
+    // Ano automático no rodapé
     document.getElementById('ano').textContent = new Date().getFullYear();
   </script>
-</body>
-</html>
-  </main>
-  <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emagreça em 30 Dias</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #fff;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #ff416c, #ff4b2b);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #28a745;
-      color: white;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #218838;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1rem;
-    }
-    .benefits li {
-      margin: 10px 0;
-      padding: 10px;
-      background: #f8f9fa;
-      border-radius: 8px;
-    }
-    .testimonials {
-      background: #f1f1f1;
-      padding: 50px 20px;
-    }
-    .testimonial {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #f8d90f;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Emagreça em 30 Dias</h1>
-    <p>Transforme seu corpo e sua mente com dicas simples, práticas e eficazes.</p>
-    <a href="https://pay.hotmart.com/H101662874C" class="btn">Quero emagrecer agora</a>
-  </header>
-
-  <section class="benefits">
-    <h2>✨ Benefícios do Método</h2>
-    <ul>
-      <li>✅ Perda de peso de forma saudável</li>
-      <li>✅ Alimentação simples, sem passar fome</li>
-      <li>✅ Resultados visíveis em apenas 30 dias</li>
-      <li>✅ Mais energia e autoestima elevada</li>
-    </ul>
-  </section>
-
-  <section class="testimonials">
-    <h2>💬 Depoimentos de quem já testou</h2>
-    <div class="testimonial">
-      <p>“Perdi 7kg em 1 mês sem sofrimento. Recomendo muito!”</p>
-      <strong>- Ana, 29 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>“Nunca imaginei que seria tão simples. Hoje me sinto muito mais confiante.”</p>
-      <strong>- Carlos, 34 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>“O método é prático, não passo fome e já vejo resultados no espelho.”</p>
-      <strong>- Juliana, 25 anos</strong>
-    </div>
-  </section>
-
-  <section>
-    <h2>🚀 Pronto para transformar sua vida?</h2>
-    <p>Não adie mais seus resultados. Comece hoje mesmo!</p>
-    <a href="https://pay.hotmart.com/H101662874C" class="btn">Garantir meu acesso agora</a>
-  </section>
-
-</body>
-</html>
-</section>
-
-<footer style="background:#222; color:#fff; text-align:center; padding:30px 15px; margin-top:40px; font-size:0.9rem;">
-  <p>© <span id="ano"></span> <strong>Projeto Emagreça em 30 Dias</strong>. Todos os direitos reservados.</p>
-
-  <p style="margin:10px 0;">
-    <a href="politica.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Política de Privacidade</a>
-    <a href="termos.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Termos de Uso</a>
-    <a href="index.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Voltar para Início</a>
-  </p>
-
-  <div style="margin-top:15px; font-size:0.9rem;">
-    🔒 Compra <strong>100% Segura</strong> – Seus dados estão protegidos
-  </div>
-</footer>
-
-<!-- Botão flutuante voltar ao topo -->
-<button id="topoBtn" aria-label="Voltar ao topo">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-    <path d="M12 19V5M5 12l7-7 7 7"/>
-  </svg>
-</button>
-
-<style>
-  /* Estilo do botão flutuante */
-  #topoBtn {
-    position: fixed;
-    bottom: 20px;   /* Distância do rodapé */
-    right: 20px;    /* Distância da lateral */
-    background: #f14161;
-    border: none;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;  /* Só aparece quando rolar a página */
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-    transition: background 0.3s, transform 0.2s;
-    z-index: 1000;
-  }
-
-  #topoBtn:hover {
-    background: #c0392b; /* Cor quando passa o mouse */
-    transform: scale(1.1);
-  }
-
-  #topoBtn svg {
-    width: 20px;
-    height: 20px;
-    stroke: #fff; /* Cor do ícone */
-  }
-</style>
-
-<script>
-  // Atualiza automaticamente o ano no rodapé
-  document.getElementById('ano').textContent = new Date().getFullYear();
-
-  // Mostrar/esconder botão
-  const topoBtn = document.getElementById('topoBtn');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      topoBtn.style.display = "block";
-    } else {
-      topoBtn.style.display = "none";
-    }
-  });
-
-  // Voltar suavemente ao topo
-  topoBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  
-</script>
-
-</body>
-</html>
-
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; background-color: #f9f9f9; }
-        h1, h2 { color: #333; }
-        p { margin-bottom: 15px; }
-        footer { margin-top: 40px; text-align: center; }
-        a { color: #1a73e8; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <h1>Política de Privacidade</h1>
-    <p>Sua privacidade é importante para nós. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações.</p>
-    
-    <h2>Informações que coletamos</h2>
-    <p>Coletamos informações fornecidas por você ao realizar compras ou cadastro, como nome, e-mail e dados de pagamento.</p>
-
-    <h2>Uso das informações</h2>
-    <p>Usamos suas informações para processar pedidos, enviar atualizações sobre produtos e melhorar sua experiência em nosso site.</p>
-
-    <h2>Proteção das informações</h2>
-    <p>Adotamos medidas de segurança para proteger seus dados contra acesso não autorizado, alteração ou divulgação.</p>
-
-    <h2>Compartilhamento de informações</h2>
-    <p>Não vendemos ou compartilhamos suas informações pessoais com terceiros, exceto quando necessário para processar pagamentos ou cumprir obrigações legais.</p>
-
-    <h2>Contato</h2>
-    <p>Se tiver dúvidas sobre esta política, entre em contato pelo e-mail:emagreca329@gmail.com</p>
-
-    <footer>
-        <a href="termos.html">Termos de Uso</a> | <a href="index.html">Voltar para a Landing Page</a>
-    </footer>
 </body>
 </html>
