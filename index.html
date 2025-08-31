@@ -204,7 +204,9 @@
     <h3 style="color:#f14161;">📱 Posso acessar no celular?</h3>
     <p>Sim, o material é totalmente digital e compatível com celular, computador ou tablet.</p>
   </div>
-  
+  p style="text-align:center; margin-top:20px;">
+  <a href="#topo" style="color:#f14161; text-decoration:none;">↑ Voltar ao topo</a>
+</p>
   </section>
   <footer>
     © <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.
@@ -342,24 +344,101 @@
 
 </body>
 </html>
-<footer style="background:#222; color:#fff; text-align:center; padding:30px 15px; margin-top:40px; font-size:0.95rem;">
-  <p>© 2025 - Projeto <strong>Emagreça em 30 Dias</strong>. Todos os direitos reservados.</p>
-  
+</section>
+
+<footer style="background:#222; color:#fff; text-align:center; padding:30px 15px; margin-top:40px; font-size:0.9rem;">
+  <p>© <span id="ano"></span> <strong>Projeto Emagreça em 30 Dias</strong>. Todos os direitos reservados.</p>
+
   <p style="margin:10px 0;">
-    <a href="politica.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Política de Privacidade</a> |
+    <a href="politica.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Política de Privacidade</a>
     <a href="termos.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Termos de Uso</a>
+    <a href="index.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Voltar para Início</a>
   </p>
-  
+
   <div style="margin-top:15px; font-size:0.9rem;">
     🔒 Compra <strong>100% Segura</strong> – Seus dados estão protegidos
   </div>
-
-  <div style="margin-top:10px;">
-    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" style="height:25px; margin:0 5px;">
-    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" style="height:25px; margin:0 5px;">
-    <img src="https://img.icons8.com/color/48/000000/lock.png" alt="Secure" style="height:25px; margin:0 5px;">
-  </div>
 </footer>
+
+<!-- Botão flutuante voltar ao topo -->
+<button id="topoBtn" aria-label="Voltar ao topo">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<style>
+  /* Estilo do botão flutuante */
+  #topoBtn {
+    position: fixed;
+    bottom: 20px;   /* Distância do rodapé */
+    right: 20px;    /* Distância da lateral */
+    background: #f14161;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;  /* Só aparece quando rolar a página */
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+  }
+
+  #topoBtn:hover {
+    background: #c0392b; /* Cor quando passa o mouse */
+    transform: scale(1.1);
+  }
+
+  #topoBtn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff; /* Cor do ícone */
+  }
+</style>
+
+<script>
+  // Atualiza automaticamente o ano no rodapé
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  // Mostrar/esconder botão
+  const topoBtn = document.getElementById('topoBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      topoBtn.style.display = "block";
+    } else {
+      topoBtn.style.display = "none";
+    }
+  });
+
+  // Voltar suavemente ao topo
+  topoBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+  // Atualiza automaticamente o ano do rodapé
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // Mostrar/esconder botão
+  const topoBtn = document.getElementById("topoBtn");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      topoBtn.classList.add("mostrar");
+    } else {
+      topoBtn.classList.remove("mostrar");
+    }
+  });
+
+  // Ação do botão
+  topoBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade</title>
     <style>
