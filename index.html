@@ -63,17 +63,112 @@
   <main>
     <h2>Comece hoje mesmo</h2>
     <p>Descubra como é possível perder peso com saúde, sem dietas malucas e de forma sustentável.</p>
-    <.botao {
-    background-color: #ff416c;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 10px;
-    display: inline-block;
-}
-.botao:hover {
-    background-color: #ff4b2b;
-}
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emagreça em 30 Dias</title>
+
+  <style>
+    :root{
+      --primaria:#f41616;
+      --primaria-hover:#f4422b;
+      --texto:#222;
+      --bg:#fafafa;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--texto);
+      background:var(--bg);
+      line-height:1.6;
+    }
+
+    header{
+      padding:48px 20px;
+      text-align:center;
+      background:linear-gradient(180deg, #fff, #f7f7f7);
+      border-bottom:1px solid #eee;
+    }
+    header h1{margin:0 0 8px 0; font-size:2rem}
+    header p{margin:0; opacity:.9}
+
+    main{max-width:900px; margin:32px auto; padding:0 20px}
+
+    .cta{
+      margin-top:24px;
+    }
+    .botao{
+      background-color:var(--primaria);
+      color:#fff;
+      padding:15px 30px;
+      text-decoration:none;
+      border-radius:10px;
+      display:inline-block;
+      font-weight:bold;
+      transition:background-color .2s ease, transform .06s ease;
+    }
+    .botao:hover{background-color:var(--primaria-hover)}
+    .botao:active{transform:scale(.98)}
+
+    section{
+      background:#fff;
+      border:1px solid #eee;
+      border-radius:12px;
+      padding:24px;
+      margin-top:24px;
+    }
+    section h2{margin-top:0}
+
+    footer{
+      text-align:center;
+      font-size:.9rem;
+      color:#666;
+      padding:24px 16px 48px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Emagreça em 30 Dias</h1>
+    <p>Transforme seu corpo e sua mente com dicas simples e eficazes.</p>
+    <div class="cta">
+      <!-- TROQUE # PELO LINK DO SEU CHECKOUT -->
+      <a class="botao" href="#">Garantir meu ebook agora</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Comece hoje mesmo</h2>
+      <p>Descubra como é possível perder peso com saúde, sem dietas malucas e de forma sustentável.</p>
+      <ul>
+        <li>Plano alimentar simples de seguir</li>
+        <li>Treinos rápidos para iniciantes</li>
+        <li>Dicas de motivação e constância</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>O que você vai receber</h2>
+      <p>Ebook completo + checklist imprimível + acesso a atualizações futuras.</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Atualiza o ano do rodapé automaticamente
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
   </main>
   <!DOCTYPE html>
 <html lang="pt-BR">
