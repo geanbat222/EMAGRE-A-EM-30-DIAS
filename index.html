@@ -83,39 +83,47 @@
   }
 
   /* Botão CTA */
-  /* Botão CTA branco (padrão) */
+  /* CTA – versão branca (secundária) */
 .botao-cta,
+.botao-cta:link,
 .botao-cta:visited{
-  background-color:#fff;
+  background:#fff;
   color:#f14161;
-  padding:15px 30px;
-  font-size:1rem;
+  padding:16px 28px;
+  font-size:1.05rem;
   font-weight:700;
   text-decoration:none;
-  border-radius:8px;
+  border-radius:10px;
   display:inline-block;
-  box-shadow:0 4px 8px rgba(0,0,0,.2);
-  transition:all .25s ease;
-  cursor:pointer;
+  line-height:1;
+  box-shadow:0 6px 14px rgba(0,0,0,.18);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
   border:0;
 }
 
+/* CTA – hover comum */
 .botao-cta:hover{
-  background-color:#f14161;
-  color:#fff;
-  transform:scale(1.05);
-  box-shadow:0 6px 12px rgba(0,0,0,.3);
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,.22);
 }
 
-/* Botão CTA vermelho (primário) */
+/* CTA – PRIMÁRIO (vermelho com texto branco) */
 .botao-cta.primario,
+.botao-cta.primario:link,
 .botao-cta.primario:visited{
-  background-color:#f14161;
+  background:#f14161;
   color:#fff;
 }
 
+/* Hover do primário: só escurece um pouco */
 .botao-cta.primario:hover{
-  background-color:#d9364d;
+  background:#d9364d;
+}
+
+/* Toques de acessibilidade */
+.botao-cta:focus-visible{
+  outline:3px solid rgba(255,255,255,.9);
+  outline-offset:3px;
     
   }
 </style>
