@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz Rápido – Emagreça em 30 Dias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--p:#EE5566;--b:#1f1f1f;--t:#464646;--bd:#e9e9e9;--ok:#26A65B}
+  *{box-sizing:border-box} body{margin:0;font-family:Poppins,Arial,sans-serif;color:var(--t);background:#fff}
+  .container{width:min(860px,92%);margin:32px auto}
+  .card{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+  h1{margin:0 0 6px;color:var(--b)} .muted{color:#777;margin:0 0 18px}
+  .progress{height:10px;background:#f3f3f3;border-radius:999px;overflow:hidden;margin:12px 0 20px}
+  .bar{height:100%;background:linear-gradient(90deg,var(--p),#FF8A5C);width:0%}
+  .q{margin:16px 0} .q h3{margin:0 0 10px;color:var(--b)}
+  .opt{display:flex; gap:8px; margin:8px 0} .opt input{margin-top:3px}
+  .actions{display:flex;gap:10px;margin-top:14px}
+  .btn{appearance:none;border:0;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer}
+  .btn-primary{background:var(--p);color:#fff} .btn-outline{background:#fff;border:1px solid var(--bd);color:var(--b)}
+  .btn[disabled]{opacity:.6;cursor:not-allowed}
+  .result{display:none;margin-top:18px}
+  .success{color:var(--ok);font-weight:700}
+  .field{display:flex;gap:8px;align-items:center;margin:10px 0}
+  input[type="email"]{flex:1;padding:10px 12px;border:1px solid var(--bd);border-radius:10px}
+  .cta{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h1>Quiz rápido</h1>
+    <p class="muted">Responda 6 perguntas (leva menos de 60s) para receber uma recomendação personalizada.</p>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+
+    <form id="quiz">
+      <!-- 1 -->
+      <div class="q" data-q="objetivo">
+        <h3>1) Qual é o seu objetivo principal?</h3>
+        <label class="opt"><input type="radio" name="objetivo" value="3-5kg"> Perder 3–5kg</label>
+        <label class="opt"><input type="radio" name="objetivo" value="6-10kg"> Perder 6–10kg</label>
+        <label class="opt"><input type="radio" name="objetivo" value="+10kg"> Perder +10kg</label>
+      </div>
+      <!-- 2 -->
+      <div class="q" data-q="tempo">
+        <h3>2) Quanto tempo por dia você pode dedicar?</h3>
+        <label class="opt"><input type="radio" name="tempo" value="15"> 10–15 min</label>
+        <label class="opt"><input type="radio" name="tempo" value="30"> 20–30 min</label>
+        <label class="opt"><input type="radio" name="tempo" value="30+"> 30 min ou mais</label>
+      </div>
+      <!-- 3 -->
+      <div class="q" data-q="local">
+        <h3>3) Onde pretende treinar?</h3>
+        <label class="opt"><input type="radio" name="local" value="casa"> Em casa</label>
+        <label class="opt"><input type="radio" name="local" value="academia"> Academia</label>
+        <label class="opt"><input type="radio" name="local" value="outdoor"> Ao ar livre</label>
+      </div>
+      <!-- 4 -->
+      <div class="q" data-q="desafio">
+        <h3>4) Qual seu maior desafio hoje?</h3>
+        <label class="opt"><input type="radio" name="desafio" value="tempo"> Falta de tempo</label>
+        <label class="opt"><input type="radio" name="desafio" value="ansiedade"> Ansiedade/compulsão</label>
+        <label class="opt"><input type="radio" name="desafio" value="disciplina"> Falta de disciplina</label>
+        <label class="opt"><input type="radio" name="desafio" value="alimentacao"> Não sei o que comer</label>
+      </div>
+      <!-- 5 -->
+      <div class="q" data-q="alimentacao">
+        <h3>5) Preferências alimentares?</h3>
+        <label class="opt"><input type="radio" name="alimentacao" value="tradicional"> Tradicional</label>
+        <label class="opt"><input type="radio" name="alimentacao" value="lowcarb"> Low-carb</label>
+        <label class="opt"><input type="radio" name="alimentacao" value="veg"> Vegetariana</label>
+        <label class="opt"><input type="radio" name="alimentacao" value="indiferente"> Indiferente</label>
+      </div>
+      <!-- 6 -->
+      <div class="q" data-q="nivel">
+        <h3>6) Seu nível atual de atividade?</h3>
+        <label class="opt"><input type="radio" name="nivel" value="iniciante"> Iniciante</label>
+        <label class="opt"><input type="radio" name="nivel" value="intermediario"> Intermediário</label>
+        <label class="opt"><input type="radio" name="nivel" value="avancado"> Avançado</label>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-outline" id="voltar" disabled>← Voltar</button>
+        <button type="button" class="btn btn-primary" id="proximo">Próximo →</button>
+      </div>
+    </form>
+
+    <div class="result" id="resultado">
+      <p class="success">✅ Pronto! Analisamos suas respostas.</p>
+      <p id="recomendacao"></p>
+
+      <!-- (Opcional) captar e-mail -->
+      <div class="field">
+        <input type="email" id="email" placeholder="Seu melhor e-mail (opcional)">
+        <button class="btn btn-outline" id="salvarEmail" type="button">Salvar</button>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary cta" id="btnCheckout" href="#" rel="nofollow">Começar meu plano de 30 dias</a>
+      </div>
+      <p class="muted">Garantia incondicional de 7 dias. Acesso imediato após a compra.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const qs=[...document.querySelectorAll('.q')];
+  let idx=0;
+  const bar=document.getElementById('bar');
+  const btnNext=document.getElementById('proximo');
+  const btnPrev=document.getElementById('voltar');
+  const form=document.getElementById('quiz');
+  const result=document.getElementById('resultado');
+  const rec=document.getElementById('recomendacao');
+  const btnCheckout=document.getElementById('btnCheckout');
+
+  // mostrar apenas a primeira pergunta
+  function show(i){
+    qs.forEach((el,k)=>{ el.style.display = (k===i)?'block':'none'; });
+    btnPrev.disabled = (i===0);
+    const pct=Math.round(((i)/qs.length)*100);
+    bar.style.width = Math.max(8, pct) + '%';
+  }
+  show(idx);
+
+  function getAnswer(i){
+    const name = qs[i].dataset.q;
+    const el = form.querySelector(input[name="${name}"]:checked);
+    return el ? el.value : null;
+  }
+
+  function allAnsweredUpTo(i){
+    for(let k=0;k<=i;k++){ if(!getAnswer(k)) return false; }
+    return true;
+  }
+
+  btnNext.addEventListener('click', ()=>{
+    if(!getAnswer(idx)){ alert('Selecione uma opção para continuar.'); return; }
+    if(idx < qs.length-1){ idx++; show(idx); }
+    else { finish(); }
+  });
+
+  btnPrev.addEventListener('click', ()=>{
+    if(idx>0){ idx--; show(idx); }
+  });
+
+  function finish(){
+    // monta perfil simples
+    const objetivo=getAnswer(0);
+    const tempo=getAnswer(1);
+    const local=getAnswer(2);
+    const desafio=getAnswer(3);
+    const alimentacao=getAnswer(4);
+    const nivel=getAnswer(5);
+
+    // copy personalizada
+    let texto = `Perfil detectado: `;
+    texto += (nivel==='iniciante') ? 'Iniciante' : (nivel==='intermediario'?'Intermediário':'Avançado');
+    texto += ` • Objetivo: ${objetivo} • Tempo diário: ${tempo} min • Local: ${local}.<br><br>`;
+    texto += `🎯 Recomendação: siga o plano de 30 dias com `;
+    texto += (tempo==='15') ? 'treinos de 15 minutos e cardápio enxuto' :
+             (tempo==='30' ? 'treinos de 20–30 minutos e cardápio flexível' : 'treinos completos e variações avançadas');
+    texto += `, focando em `;
+    texto += (desafio==='tempo') ? 'otimizar rotinas curtas' :
+             (desafio==='ansiedade') ? 'técnicas de saciedade e controle da ansiedade' :
+             (desafio==='disciplina') ? 'hábitos e metas semanais' : 'planejamento alimentar simples';
+    texto += . Preferência alimentar: ${alimentacao}.;
+
+    rec.innerHTML = texto;
+
+    // montar link do checkout com parâmetros
+    const params = new URLSearchParams({
+      objetivo, tempo, local, desafio, alimentacao, nivel, src: 'quiz'
+    });
+    const checkout = 'https://pay.hotmart.com/H101662874C';
+    btnCheckout.href = checkout + (checkout.includes('?') ? '&' : '?') + params.toString();
+
+    form.style.display='none';
+    result.style.display='block';
+    bar.style.width='100%';
+  }
+
+  // salvar e-mail no localStorage (simples)
+  const btnSave=document.getElementById('salvarEmail');
+  btnSave.addEventListener('click', ()=>{
+    const email=document.getElementById('email').value.trim();
+    if(email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      localStorage.setItem('quiz_email', email);
+      alert('E-mail salvo! Vamos te enviar dicas úteis.');
+    }else{
+      alert('Digite um e-mail válido (ou deixe em branco).');
+    }
+  });
+})();
+</script>
+</body>
+</html>
