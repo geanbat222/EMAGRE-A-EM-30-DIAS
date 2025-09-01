@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      color: #333;
-    }
-    h1 { color: #f14161; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade – Emagreça em 30 Dias</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--b:#1f1f1f;--t:#444;--borda:#e9e9e9}
+  *{box-sizing:border-box} body{margin:0;font-family:Poppins,Arial,sans-serif;color:var(--t)}
+  header{background:#fafafa;border-bottom:1px solid var(--borda)}
+  .container{width:min(1000px,92%);margin:auto;padding:28px 0}
+  h1{color:var(--b);margin:0 0 6px} h2{color:var(--b);margin:24px 0 8px}
+  a{color:#0a7; text-decoration:underline}
+  footer{border-top:1px solid var(--borda);padding:16px 0;background:#fafafa;color:#666}
+</style>
 </head>
 <body>
-  <h1>Política de Privacidade</h1>
-  <p>Sua privacidade é importante para nós. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações.</p>
+<header>
+  <div class="container">
+    <h1>Política de Privacidade</h1>
+    <p>Última atualização: <span id="dt"></span></p>
+  </div>
+</header>
+
+<main class="container">
+  <p>Esta Política de Privacidade descreve como <strong>Emagreça em 30 Dias</strong> coleta, usa e protege suas informações ao utilizar nosso site e adquirir nossos produtos digitais.</p>
 
   <h2>1. Informações que coletamos</h2>
-  <p>Coletamos informações fornecidas por você ao realizar compras ou cadastro, como nome, e-mail e dados de pagamento.</p>
+  <ul>
+    <li><strong>Dados de contato:</strong> ebook30dias.contato@gmail.com</li>
+    <li><strong>Dados de pagamento:</strong> processados por plataformas seguras (como Hotmart). Nós <u>não</u> armazenamos dados de cartão.</li>
+    <li><strong>Dados de navegação:</strong> páginas acessadas, cliques e tempo de permanência (via cookies/analytics).</li>
+  </ul>
 
-  <h2>2. Uso das informações</h2>
-  <p>Usamos suas informações para processar pedidos, enviar atualizações e melhorar nossos serviços.</p>
+  <h2>2. Como usamos seus dados</h2>
+  <ul>
+    <li>Entregar o ebook adquirido e oferecer suporte.</li>
+    <li>Enviar comunicações transacionais e dicas relacionadas.</li>
+    <li>Melhorar o site, ofertas e experiência do usuário.</li>
+  </ul>
 
-  <h2>3. Proteção das informações</h2>
-  <p>Adotamos medidas de segurança para proteger seus dados contra acesso não autorizado.</p>
+  <h2>3. Seus direitos</h2>
+  <p>Você pode solicitar acesso, correção ou exclusão dos seus dados. Para exercer seus direitos, entre em contato: <a href="mailto:>ebook30dias.contato@gmail.com
+  <h2>4. Segurança</h2>
+  <p>Adotamos medidas técnicas e administrativas para proteger seus dados. Nenhum método é 100% seguro, mas buscamos sempre as melhores práticas.</p>
 
-  <h2>4. Compartilhamento</h2>
-  <p>Não vendemos ou compartilhamos suas informações pessoais, exceto quando necessário para processar pagamentos ou cumprir obrigações legais.</p>
+  <h2>5. Alterações nesta política</h2>
+  <p>Podemos atualizar esta Política. A versão vigente estará sempre nesta página com a data de atualização.</p>
 
-  <h2>5. Contato</h2>
-  <p>Se tiver dúvidas, entre em contato pelo e-mail: emagreca329@gmail.com</p>
+  <p><a href="./">← Voltar para a página inicial</a></p>
+</main>
 
-  <!-- Rodapé -->
-  <footer style="background:#222; color:#fff; text-align:center; padding:30px 15px; margin-top:40px; font-size:0.9rem;">
-    <p>© 2025 - Projeto <strong>Emagreça em 30 Dias</strong>. Todos os direitos reservados.</p>
+<footer>
+  <div class="container">© <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.</div>
+</footer>
 
-    <p style="margin:10px 0;">
-      <a href="politica.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Política de Privacidade</a> |
-      <a href="termos.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Termos de Uso</a> |
-      <a href="index.html" style="color:#f1c40f; text-decoration:none; margin:0 10px;">Voltar para a Página Inicial</a>
-    </p>
-
-    <div style="margin-top:15px; font-size:0.9rem;">
-      🔒 Compra 100% Segura - Seus dados estão protegidos
-    </div>
-
-    <div style="margin-top:10px;">
-      <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" style="height:25px; margin:5px;">
-      <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" style="height:25px; margin:5px;">
-      <img src="https://img.icons8.com/color/48/000000/lock.png" alt="Secure" style="height:25px; margin:5px;">
-    </div>
-  </footer>
+<script>
+  const d=new Date();
+  document.getElementById('ano').textContent=d.getFullYear();
+  document.getElementById('dt').textContent=d.toLocaleDateString('pt-BR');
+</script>
 </body>
 </html>
