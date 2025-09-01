@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<h3 style="margin-top:0;">Garantia incondicional</h3>
+<p>Experimente por 7 dias. Se não amar, devolvemos 100% do seu dinheiro, sem burocracia.</p>
+<hr style="border-color: rgba(255,255,255,.08); border-width:0; border-top:1px solid rgba(255,255,255,.08); margin:12px 0;"/>
+<h4 style="margin:0 0 8px 0;">Perguntas frequentes</h4>
+<details>
+<summary>Em quanto tempo terei acesso?</summary>
+<p>O acesso é liberado imediatamente após a confirmação do pagamento.</p>
+</details>
+<details>
+<summary>Preciso fazer exercícios?</summary>
+<p>O foco é alimentação prática. Há sugestões leves e opcionais para potencializar resultados.</p>
+</details>
+<details>
+<summary>Funciona com rotina corrida?</summary>
+<p>Sim. O método foi pensado para quem tem pouco tempo e precisa de praticidade.</p>
+</details>
+</aside>
+</div>
+
+
+<p class="foot">© <span id="year"></span> Seu Nome • <a href="#" style="color:inherit;">Política de Privacidade</a> • <a href="#" style="color:inherit;">Termos de Uso</a></p>
+</div>
+
+
+<script>
+// Ano
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Cronômetro: armazena deadline no localStorage para não resetar no refresh
+(function(){
+const el = document.getElementById('timer');
+const KEY = 'checkout_deadline_v2';
+const mins = parseInt(el?.dataset?.minutes || '30', 10);
+let deadline = localStorage.getItem(KEY);
+if (!deadline) {
+deadline = Date.now() + mins * 60 * 1000; // minutos
+localStorage.setItem(KEY, String(deadline));
+} else {
+deadline = Number(deadline);
+}
+const fmt = (ms) => {
+if (ms <= 0) return '00:00';
+const totalSec = Math.floor(ms / 1000);
+const h = Math.floor(totalSec / 3600);
+const m = Math.floor((totalSec % 3600) / 60);
+const s = totalSec % 60;
+if (h > 0) return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+const tick = () => {
+const t = deadline - Date.now();
+if (t > 0) {
+el.textContent = fmt(t);
+} else {
+el.textContent = 'Oferta expirada';
+clearInterval(iv);
+}
+};
+tick();
+const iv = setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
