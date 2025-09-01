@@ -98,17 +98,15 @@
 </style>
 </head>
 <body>
-
 <!-- Barra superior com cronômetro -->
 <div class="bar">
-  <div class="container wrap">
+  <div class="wrap">
     <span class="pill">⚡ Oferta de lançamento</span>
-    <span>Desconto ativo por:</span>
-    <strong class="timer" id="timer">10:00</strong>
+    <span class="pill">Desconto ativo por:</span>
+    <span class="pill timer" id="timer">10:00</span>
   </div>
 </div>
-
-<!-- HERO -->
+<!-- HERO --> 
 <header class="hero">
   <div class="container hero-grid">
     <div>
@@ -127,9 +125,34 @@
     <div class="mockup">
       <!-- Troque a imagem abaixo pela capa do seu ebook (coloque o arquivo no repositório e ajuste o src) -->
       <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop" alt="Capa do ebook Emagreça em 30 Dias">
-    </div>
-  </div>
+    </div> 
+    
 </header>
+<!-- SCRIPT DO CRONÔMETRO -->
+  <script>
+  function startTimer(duration, display) {
+      let timer = duration, minutes, seconds;
+      setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          display.textContent = minutes + ":" + seconds;
+
+          if (--timer < 0) {
+              timer = duration; // reinicia quando chega a zero
+          }
+      }, 1000);
+  }
+
+  window.onload = function () {
+      let tenMinutes = 60 * 10, // 10 minutos
+          display = document.querySelector('#timer');
+      startTimer(tenMinutes, display);
+  };
+  </script>
 
 <!-- O que você vai aprender -->
 <section>
