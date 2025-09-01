@@ -1,232 +1,265 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emagreça em 30 Dias</title>
-  <meta name="description" content="Ebook Emagreça em 30 Dias: plano..." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emagreça em 30 Dias – Ebook</title>
+<meta name="description" content="Transforme seu corpo em 30 dias com plano alimentar simples, treinos rápidos e receitas práticas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cor-primaria:#EE5566;      /* fundo destaque */
+    --cor-primaria-2:#FF8A5C;    /* gradiente */
+    --cor-escura:#1F1F1F;
+    --cor-texto:#3a3a3a;
+    --cor-cta:#26A65B;           /* botão */
+    --cor-cta-hover:#219653;
+    --cor-clara:#ffffff;
+    --cor-borda:#eaeaea;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--cor-texto);background:#fff;scroll-behavior:smooth}
+  .container{width:min(1120px,92%);margin-inline:auto}
 
-    <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  /* Barra do cronômetro fixa */
+  .bar{
+    position:sticky; top:0; z-index:1000;
+    background:linear-gradient(90deg,var(--cor-primaria),var(--cor-primaria-2));
+    color:#fff; padding:.65rem 0;
+    box-shadow:0 6px 18px rgba(238,85,102,.25);
+  }
+  .bar .wrap{display:flex; gap:.75rem; align-items:center; justify-content:center; flex-wrap:wrap}
+  .pill{display:inline-flex; gap:.5rem; align-items:center; background:rgba(255,255,255,.16); padding:.45rem .8rem; border-radius:999px; font-weight:600}
+  .timer{font-variant-numeric:tabular-nums; letter-spacing:.5px}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg, rgba(238,85,102,.07), transparent 60%), #fff;
+    padding:64px 0 24px;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:36px; align-items:center}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+  .badge{display:inline-block; font-size:.85rem; color:#fff; background:linear-gradient(90deg,var(--cor-primaria),var(--cor-primaria-2)); padding:.35rem .7rem; border-radius:999px; font-weight:600; margin-bottom:10px}
+  h1{color:var(--cor-escura); font-size:clamp(30px,5vw,48px); line-height:1.1; margin:8px 0 12px}
+  .sub{font-size:clamp(16px,2.4vw,20px); color:#4a4a4a; margin:0 0 22px}
+  .cta{display:inline-flex; align-items:center; gap:.6rem; background:var(--cor-cta); color:#fff; border:none; padding:16px 22px; font-weight:700; border-radius:12px; cursor:pointer; box-shadow:var(--shadow); text-decoration:none}
+  .cta:hover{background:var(--cor-cta-hover)}
+  .trust{display:flex; gap:14px; align-items:center; margin-top:18px; flex-wrap:wrap}
+  .trust .selo{display:flex; gap:.5rem; align-items:center; background:#fff; border:1px solid var(--cor-borda); padding:.5rem .7rem; border-radius:10px}
+
+  .mockup{
+    background:linear-gradient(160deg, rgba(255,138,92,.15), rgba(238,85,102,.08));
+    border:1px solid var(--cor-borda); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
+  }
+  .mockup img{width:100%; border-radius:12px; display:block}
+
+  /* Seções */
+  section{padding:42px 0}
+  h2{font-size:clamp(24px,3.6vw,34px); color:var(--cor-escura); margin:0 0 18px}
+  .card{background:#fff; border:1px solid var(--cor-borda); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media (max-width:900px){ .grid-3{grid-template-columns:1fr} }
+
+  ul.check{list-style:none; padding:0; margin:0}
+  ul.check li{padding-left:34px; position:relative; margin:12px 0}
+  ul.check li:before{
+    content:""; position:absolute; left:0; top:2px; width:22px; height:22px;
+    background:conic-gradient(from 180deg at 50% 50%, #fff 0 25%, var(--cor-cta) 0 100%);
+    border-radius:50%; outline:6px solid rgba(38,166,91,.12)
   }
 
-  body {
-    background: url('capa-site.png') center/cover no-repeat fixed !important;
-  }                                                                                                                                         </style>
+  /* Depoimentos */
+  .testi{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media (max-width:900px){ .testi{grid-template-columns:1fr} }
+  .t{background:#fff; border:1px solid var(--cor-borda); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+  .t .nome{font-weight:700}
+  .t .nota{color:#F5A524; font-size:18px}
+
+  /* FAQ (accordion simples) */
+  details{border:1px solid var(--cor-borda); border-radius:12px; padding:14px 16px; background:#fff}
+  details+details{margin-top:10px}
+  summary{cursor:pointer; font-weight:700}
+  details[open]{box-shadow:var(--shadow)}
+
+  /* Rodapé */
+  footer{padding:28px 0; background:#fafafa; border-top:1px solid var(--cor-borda); color:#666}
+  footer a{color:inherit; text-decoration:underline}
+
+  /* botão flutuante final */
+  .sticky-cta{
+    position:sticky; bottom:12px; z-index:999;
+    display:flex; justify-content:center; padding:0 .5rem;
+  }
+  .sticky-cta a{width:min(720px,100%); text-align:center}
 </style>
-</head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emagreça em 30 Dias</title>
-  <meta name="description" content="Ebook Emagreça em 30 Dias: plano simples e eficaz para perder peso com saúde e manter os resultados." />
-
-  <!-- Open Graph (compartilhamento) -->
-  <link rel="icon" href="favicon.ico">
-  <meta property="og:title" content="Emagreça em 30 Dias">
-  <meta property="og:description" content="Plano simples e eficaz para perder peso com saúde.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://geanbat222.github.io/EMAGRE-A-EM-30-DIAS/">
-  <meta property="og:image" content="https://geanbat222.github.io/EMAGRE-A-EM-30-DIAS/capa.jpg">
-
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --primaria:#f14161;
-      --primaria-hover:#d9364d;
-      --texto:#222;
-      --bg:#ffffff;
-      --maxw:980px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; }
-    body{
-      background:var(--bg);
-      color:var(--texto);
-      font-family:"Inter", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-      line-height:1.6;
-    }
-    h1,h2,h3{ margin:0 0 12px; letter-spacing:.2px; }
-    p{ margin:0 0 16px; color:#444; }
-
-    .container{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
-    section{ margin:48px 0; }
-    section h2{ margin-bottom:8px; }
-
-   .hero {
-  text-align: center;
-  padding: 100px 20px;
-  color: #fff;
-  margin: 0;
-  background: url('capa-site.png') center/cover no-repeat;
-}
-    .hero p{ color:#fff; opacity:.95; }
-
-    .botao,
-    .botao:link,
-    .botao:visited{
-      background:#fff;
-      color:var(--primaria);
-      padding:16px 28px;
-      font-weight:700;
-      text-decoration:none;
-      border-radius:10px;
-      display:inline-block;
-      line-height:1;
-      box-shadow:0 6px 14px rgba(0,0,0,.18);
-      transition:transform .2s, box-shadow .2s, background .2s, color .2s;
-      border:0;
-    }
-    .botao:hover{
-      background:var(--primaria);
-      color:#fff;
-      transform:translateY(-2px);
-      box-shadow:0 10px 20px rgba(0,0,0,.22);
-    }
-
-    .card{
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:12px;
-      padding:24px;
-    }
-
-    ul.check{ padding-left:18px; margin:0; }
-    ul.check li{ margin:8px 0; }
-
-    .faq h3{ margin:16px 0 6px; font-size:1.05rem; }
-
-    footer{
-      text-align:center;
-      font-size:.9rem;
-      color:#666;
-      padding:24px 16px 48px;
-      background:#f9f9f9;
-    }
-    footer a{ color:#666; text-decoration:none; margin:0 8px; }
-    footer a:hover{ text-decoration:underline; }
-
-    #topoBtn{
-      position:fixed; right:16px; bottom:16px; z-index:9998;
-      background:#fff; color:var(--primaria); border:0; border-radius:10px;
-      padding:12px 14px; box-shadow:0 8px 18px rgba(0,0,0,.2);
-      cursor:pointer; display:none; font-weight:700;
-    }
-    #topoBtn:hover{ background:var(--primaria); color:#fff; }
-
-    @media (max-width:640px){
-      h1{ font-size:2rem; }
-      .botao{ width:100%; text-align:center; }
-      .hero{ padding:48px 0; }
-      section{ margin:36px 0; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1 style="font-size:2.5rem;">Emagreça em 30 Dias</h1>
-      <p style="font-size:1.1rem; margin:12px 0 24px;">
-        Transforme seu corpo e sua mente com dicas simples e eficazes.
-      </p>
-      <a href="https://pay.hotmart.com/H101662874C" class="botao">📘 Garantir meu ebook agora</a>
-    </div>
-  </section>
+<!-- Barra superior com cronômetro -->
+<div class="bar">
+  <div class="container wrap">
+    <span class="pill">⚡ Oferta de lançamento</span>
+    <span>Desconto ativo por:</span>
+    <strong class="timer" id="timer">10:00</strong>
+  </div>
+</div>
 
-  <!-- Seção 1 -->
-  <section>
-    <div class="container">
-      <h2>Comece hoje mesmo</h2>
-      <p>Descubra como é possível perder peso com saúde, sem dietas malucas e de forma sustentável.</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Plano prático + receitas</span>
+      <h1>Transforme seu corpo em <u>30 dias</u> — sem dietas malucas</h1>
+      <p class="sub">Perca peso com saúde, aumente sua energia e retome a confiança com um método simples que cabe na sua rotina.</p>
+      <a class="cta" href="SEU_LINK_DE_COMPRA_AQUI">
+        📘 Garantir meu ebook agora
+      </a>
+      <div class="trust">
+        <div class="selo">🔒 Compra 100% segura</div>
+        <div class="selo">✅ Garantia de 7 dias</div>
+        <div class="selo">🚚 Acesso imediato</div>
+      </div>
     </div>
-  </section>
+    <div class="mockup">
+      <!-- Troque a imagem abaixo pela capa do seu ebook (coloque o arquivo no repositório e ajuste o src) -->
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop" alt="Capa do ebook Emagreça em 30 Dias">
+    </div>
+  </div>
+</header>
 
-  <!-- O que você vai aprender -->
-  <section>
-    <div class="container card">
+<!-- O que você vai aprender -->
+<section>
+  <div class="container grid-3">
+    <div class="card">
       <h2>O que você vai aprender</h2>
       <ul class="check">
-        <li>Plano alimentar simples e flexível para 30 dias.</li>
-        <li>Treinos rápidos para fazer em casa (15–20 min).</li>
-        <li>Receitas práticas que cabem na rotina.</li>
-        <li>Estratégias de motivação e constância.</li>
-        <li>Como manter os resultados sem sofrimento.</li>
+        <li>Plano alimentar fácil de seguir — sem passar fome.</li>
+        <li>Treinos rápidos (15–20 min) para fazer em casa.</li>
+        <li>Receitas saborosas e práticas para a rotina.</li>
+        <li>Estratégias de motivação para não desistir.</li>
       </ul>
     </div>
-  </section>
+    <div class="card">
+      <h2>Para quem é</h2>
+      <ul class="check">
+        <li>Quem quer começar e precisa de um passo a passo.</li>
+        <li>Quem tem pouco tempo, mas quer resultados reais.</li>
+        <li>Quem já tentou de tudo e quer algo sustentável.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Como funciona</h2>
+      <ul class="check">
+        <li>Guia de 30 dias com metas semanais.</li>
+        <li>Lista de compras + cardápios prontos.</li>
+        <li>Suporte por email (opcional).</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- Depoimentos -->
-  <section>
-    <div class="container card">
-      <h2>Resultados de quem já leu</h2>
-      <p style="margin-bottom:14px;">Alguns depoimentos de leitores:</p>
-      <div style="display:grid; gap:16px;">
-        <blockquote style="margin:0; border-left:4px solid var(--primaria); padding-left:12px;">
-          “Perdi 4kg em 3 semanas ajustando a rotina. Simples e direto!” — <strong>Ana S.</strong>
-        </blockquote>
-        <blockquote style="margin:0; border-left:4px solid var(--primaria); padding-left:12px;">
-          “Curti os treinos rápidos. Consigo fazer antes do trabalho.” — <strong>Marcos R.</strong>
-        </blockquote>
-        <blockquote style="margin:0; border-left:4px solid var(--primaria); padding-left:12px;">
-          “O plano é realista. Nada de loucuras, dá pra manter.” — <strong>Bianca L.</strong>
-        </blockquote>
+<!-- Depoimentos -->
+<section style="background:#fff5f6">
+  <div class="container">
+    <h2>Resultados de quem aplicou</h2>
+    <div class="testi">
+      <div class="t">
+        <div class="nota">★★★★★</div>
+        <p>“Em 4 semanas perdi 4,8 kg sem sofrer. As receitas são fáceis e os treinos cabem no meu horário.”</p>
+        <div class="nome">— Larissa M.</div>
+      </div>
+      <div class="t">
+        <div class="nota">★★★★★</div>
+        <p>“O plano é direto e motivador. Parei de pular de dieta em dieta. Finalmente consistência!”</p>
+        <div class="nome">— Paulo R.</div>
+      </div>
+      <div class="t">
+        <div class="nota">★★★★★</div>
+        <p>“Gostei do cronograma semanal. Saber exatamente o que fazer tirou a ansiedade.”</p>
+        <div class="nome">— Camila S.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section>
-    <div class="container">
-      <h2>Perguntas frequentes</h2>
-      <div class="faq">
-        <h3>Em quanto tempo verei resultados?</h3>
-        <p>Seguindo as orientações, muitos leitores relatam mudanças já nas primeiras semanas.</p>
-        <h3>O pagamento é seguro?</h3>
-        <p>Sim. O pagamento é processado pela Hotmart, uma das maiores plataformas do Brasil.</p>
-        <h3>Posso acessar no celular?</h3>
-        <p>Sim. O material é totalmente digital e compatível com celular, tablet e computador.</p>
-      </div>
-    </div>
-  </section>
+<!-- Garantia -->
+<section>
+  <div class="container card">
+    <h2>Garantia incondicional de 7 dias</h2>
+    <p>Se dentro de 7 dias você achar que o ebook não é para você, devolvemos 100% do valor. Sem perguntas.</p>
+  </div>
+</section>
 
-  <!-- CTA Final -->
-  <section style="background:var(--primaria); color:#fff; text-align:center; padding:56px 0;">
-    <div class="container">
-      <h2 style="font-size:2rem;">Está pronto para mudar de vida?</h2>
-      <p style="margin:8px 0 24px;">Um guia prático para emagrecer com equilíbrio, sem abrir mão dos alimentos que você gosta.</p>
-      <a href="https://pay.hotmart.com/H101662874C" class="botao">📘 Garantir meu ebook agora</a>
-    </div>
-  </section>
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <h2>Dúvidas frequentes</h2>
+    <details>
+      <summary>Em quanto tempo vejo resultados?</summary>
+      <p>Você pode notar mudanças já na 1ª semana (energia, disposição, desinchaço). A perda de peso varia de pessoa para pessoa.</p>
+    </details>
+    <details>
+      <summary>Preciso de equipamentos?</summary>
+      <p>Não. Os treinos propostos podem ser feitos com o peso do corpo e espaço reduzido.</p>
+    </details>
+    <details>
+      <summary>O ebook serve para iniciantes?</summary>
+      <p>Sim. O método foi pensado para quem quer começar e manter consistência.</p>
+    </details>
+    <details>
+      <summary>Como recebo o material?</summary>
+      <p>Após o pagamento, o acesso é liberado imediatamente por email e página de download.</p>
+    </details>
+  </div>
+</section>
 
-  <!-- Rodapé -->
-  <footer>
-    © <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.
-    <div style="margin-top:8px;">
-      <a href="politica.html">Política de Privacidade</a>
-      <a href="termos.html">Termos de Uso</a>
-      <a href="mailto:emagreca329@gmai.com">Contato</a>
-    </div>
-  </footer>
+<!-- CTA final (sticky) -->
+<div class="sticky-cta">
+  <a class="cta" href="SEU_LINK_DE_COMPRA_AQUI">Quero começar hoje mesmo</a>
+</div>
 
-  <!-- Voltar ao topo -->
-  <button id="topoBtn" aria-label="Voltar ao topo">↑ Topo</button>
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <small>© <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.</small>
+    <small>
+      <a href="politica-privacidade.html">Política de Privacidade</a> ·
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </small>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('ano').textContent = new Date().getFullYear();
-    const topoBtn = document.getElementById('topoBtn');
-    window.addEventListener('scroll', () => {
-      topoBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
-    });
-    topoBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+<script>
+  // Cronômetro regressivo (10 minutos por padrão)
+  (function(){
+    const DURACAO_MINUTOS = 10; // ajuste se quiser
+    const chave = 'timer_fim';
+    let fim = localStorage.getItem(chave);
+    if(!fim){
+      fim = Date.now() + DURACAO_MINUTOS*60*1000;
+      localStorage.setItem(chave, fim);
+    }
+    const el = document.getElementById('timer');
+    const tick = () => {
+      const restante = Math.max(0, Number(localStorage.getItem(chave)) - Date.now());
+      const m = String(Math.floor(restante/60000)).padStart(2,'0');
+      const s = String(Math.floor((restante%60000)/1000)).padStart(2,'0');
+      el.textContent = ${m}:${s};
+      if(restante<=0){
+        // reinicia o contador para criar urgência contínua
+        const novoFim = Date.now() + DURACAO_MINUTOS*60*1000;
+        localStorage.setItem(chave, novoFim);
+      }
+    };
+    tick(); setInterval(tick, 250);
+  })();
+
+  // Ano automático no rodapé
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
