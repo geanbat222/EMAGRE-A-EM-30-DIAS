@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emagreça em 30 Dias – Ebook</title>
-<meta name="description" content="Transforme seu corpo em 30 dias com plano alimentar simples, treinos rápidos e receitas práticas.">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JX4QZTKTCV"></script>
-<script>
+<meta name="description" content="Transforme seu corpo em 30 dias com plano alimentar simples, treinos rápidos e receitas práticas." />
+<link rel="canonical" href="https://emagreca30dias.social.br/" />
+<meta name="robots" content="index,follow" /><!-- Open Graph / Twitter --><meta property="og:type" content="website" />
+<meta property="og:title" content="Emagreça em 30 Dias – Ebook" />
+<meta property="og:description" content="Plano alimentar simples, treinos rápidos e receitas práticas para resultados reais em 30 dias." />
+<meta property="og:image" content="https://emagreca30dias.social.br/nova-imagem.png" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://emagreca30dias.social.br/" />
+<meta name="twitter:card" content="summary_large_image" /><!-- Google tag (gtag.js) - Mantenha seu ID de medição --><script async src="https://www.googletagmanager.com/gtag/js?id=G-JX4QZTKTCV"></script><script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
-
   gtag('config', 'G-JX4QZTKTCV');
-</script>
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cor-primaria:#EE5566;      /* fundo destaque */
-    --cor-primaria-2:#FF8A5C;    /* gradiente */
+    --cor-primaria:#EE5566;
+    --cor-primaria-2:#FF8A5C;
     --cor-escura:#1F1F1F;
     --cor-texto:#3a3a3a;
-    --cor-cta:#26A65B;           /* botão */
+    --cor-cta:#26A65B;
     --cor-cta-hover:#219653;
     --cor-clara:#ffffff;
     --cor-borda:#eaeaea;
@@ -34,23 +35,11 @@
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--cor-texto);background:#fff;scroll-behavior:smooth}
   .container{width:min(1120px,92%);margin-inline:auto}
-
-  /* Barra do cronômetro fixa */
-  .bar{
-    position:sticky; top:0; z-index:1000;
-    background:linear-gradient(90deg,var(--cor-primaria),var(--cor-primaria-2));
-    color:#fff; padding:.65rem 0;
-    box-shadow:0 6px 18px rgba(238,85,102,.25);
-  }
+  .bar{position:sticky; top:0; z-index:1000; background:linear-gradient(90deg,var(--cor-primaria),var(--cor-primaria-2)); color:#fff; padding:.65rem 0; box-shadow:0 6px 18px rgba(238,85,102,.25)}
   .bar .wrap{display:flex; gap:.75rem; align-items:center; justify-content:center; flex-wrap:wrap}
   .pill{display:inline-flex; gap:.5rem; align-items:center; background:rgba(255,255,255,.16); padding:.45rem .8rem; border-radius:999px; font-weight:600}
   .timer{font-variant-numeric:tabular-nums; letter-spacing:.5px}
-
-  /* Hero */
-  .hero{
-    background:linear-gradient(180deg, rgba(238,85,102,.07), transparent 60%), #fff;
-    padding:64px 0 24px;
-  }
+  .hero{background:linear-gradient(180deg, rgba(238,85,102,.07), transparent 60%), #fff; padding:64px 0 24px}
   .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:36px; align-items:center}
   @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
   .badge{display:inline-block; font-size:.85rem; color:#fff; background:linear-gradient(90deg,var(--cor-primaria),var(--cor-primaria-2)); padding:.35rem .7rem; border-radius:999px; font-weight:600; margin-bottom:10px}
@@ -60,141 +49,60 @@
   .cta:hover{background:var(--cor-cta-hover)}
   .trust{display:flex; gap:14px; align-items:center; margin-top:18px; flex-wrap:wrap}
   .trust .selo{display:flex; gap:.5rem; align-items:center; background:#fff; border:1px solid var(--cor-borda); padding:.5rem .7rem; border-radius:10px}
-
-  .mockup{
-    background:linear-gradient(160deg, rgba(255,138,92,.15), rgba(238,85,102,.08));
-    border:1px solid var(--cor-borda); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
-  }
+  .mockup{background:linear-gradient(160deg, rgba(255,138,92,.15), rgba(238,85,102,.08)); border:1px solid var(--cor-borda); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
   .mockup img{width:100%; border-radius:12px; display:block}
-
-  /* Seções */
   section{padding:42px 0}
   h2{font-size:clamp(24px,3.6vw,34px); color:var(--cor-escura); margin:0 0 18px}
   .card{background:#fff; border:1px solid var(--cor-borda); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
   .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
   @media (max-width:900px){ .grid-3{grid-template-columns:1fr} }
-
   ul.check{list-style:none; padding:0; margin:0}
   ul.check li{padding-left:34px; position:relative; margin:12px 0}
-  ul.check li:before{
-    content:""; position:absolute; left:0; top:2px; width:22px; height:22px;
-    background:conic-gradient(from 180deg at 50% 50%, #fff 0 25%, var(--cor-cta) 0 100%);
-    border-radius:50%; outline:6px solid rgba(38,166,91,.12)
-  }
-
-  /* Depoimentos */
+  ul.check li:before{content:""; position:absolute; left:0; top:2px; width:22px; height:22px; background:conic-gradient(from 180deg at 50% 50%, #fff 0 25%, var(--cor-cta) 0 100%); border-radius:50%; outline:6px solid rgba(38,166,91,.12)}
   .testi{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
   @media (max-width:900px){ .testi{grid-template-columns:1fr} }
   .t{background:#fff; border:1px solid var(--cor-borda); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
   .t .nome{font-weight:700}
   .t .nota{color:#F5A524; font-size:18px}
-
-  /* FAQ (accordion simples) */
   details{border:1px solid var(--cor-borda); border-radius:12px; padding:14px 16px; background:#fff}
   details+details{margin-top:10px}
   summary{cursor:pointer; font-weight:700}
   details[open]{box-shadow:var(--shadow)}
-
-  /* Rodapé */
   footer{padding:28px 0; background:#fafafa; border-top:1px solid var(--cor-borda); color:#666}
   footer a{color:inherit; text-decoration:underline}
-
-  /* botão flutuante final */
-  .sticky-cta{
-    position:sticky; bottom:12px; z-index:999;
-    display:flex; justify-content:center; padding:0 .5rem;
-  }
+  .sticky-cta{position:sticky; bottom:12px; z-index:999; display:flex; justify-content:center; padding:0 .5rem}
   .sticky-cta a{width:min(720px,100%); text-align:center}
+  /* Banner cupom */
+  .cupom{background:#26A65B; color:#fff; text-align:center; padding:.8rem; font-weight:600; font-size:1.1rem; animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+  /* Prova social */
+  .prova-social{position:fixed; left:20px; bottom:20px; background:#fff; border:1px solid var(--cor-borda); border-radius:10px; padding:12px 16px; box-shadow:var(--shadow); font-size:.9rem; display:none;}
 </style>
 </head>
-<body>
-<!-- Barra superior com cronômetro -->
-<div class="bar">
+<body><div class="bar" role="region" aria-label="Oferta de lançamento com cronômetro">
   <div class="wrap">
     <span class="pill">⚡ Oferta de lançamento</span>
     <span class="pill">Desconto ativo por:</span>
-    <span class="pill timer" id="timer">10:00</span>
+    <span class="pill timer" id="timer" aria-live="polite">10:00</span>
   </div>
-</div>
-<!-- HERO --> 
-<header class="hero">
+</div><!-- Banner de cupom --><div class="cupom">🎁 Use o cupom <strong>RESET10</strong> e ganhe 10% OFF hoje!</div><header class="hero">
   <div class="container hero-grid">
     <div>
       <span class="badge">Plano prático + receitas</span>
       <h1>Transforme seu corpo em <u>30 dias</u> — sem dietas malucas</h1>
-      <p class="sub">método simples que já ajudou centenas de pesssoas a perderem peso sem sofrimento.resultado reais em 30 dias.</p>
-      <a class="cta" href="https://pay.hotmart.com/H101662874C?off=icfylr35">
-        📘 Garantir meu ebook agora
-      </a>
+      <p class="sub">Método simples que já ajudou centenas de pessoas a perder peso sem sofrimento. Resultados reais em 30 dias.</p>
+      <a class="cta" href="https://pay.hotmart.com/H101662874C?off=icfylr35&utm_source=tiktok&utm_medium=bio&utm_campaign=lancamento" target="_blank" rel="nofollow noopener">📘 Garantir meu ebook agora</a>
       <div class="trust">
         <div class="selo">🔒 Compra 100% segura</div>
         <div class="selo">✅ Garantia de 7 dias</div>
         <div class="selo">🚚 Acesso imediato</div>
       </div>
-      <!-- Depoimento destacado do Pedro -->
-<section style="padding:28px 0;">
-  <div style="
-    max-width:880px; margin:0 auto; padding:20px;
-    display:flex; flex-wrap:wrap; justify-content:center; text-align:center; gap:20px;
-    background:#ffffff; border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);">
-
-    <!-- Foto do Pedro -->
-    <img src="pedro.jpg" alt="Foto de Pedro"
-  style="width:90px; height:90px; max-width:100%; border-radius:50%; object-fit:cover;">
-
-    <!-- Texto do depoimento -->
-    <div>
-      <div style="font-size:18px; color:#FFB400; letter-spacing:2px;">
-        ★★★★★
-      </div>
-      <p style="margin:6px 0 0; font-size:18px; line-height:1.5; color:#1f2937;">
-        <em>
-          “O ebook mudou minha rotina! Em 4 semanas perdi 4,6 kg sem cortar tudo que gosto.<br>
-          As receitas são rápidas e o cronograma me deu disciplina.<br> Hoje tenho muito mais energia.”
-        </em>
-      </p>
-      <p style="margin-top:6px; font-weight:600; color:#111827;">
-        — Pedro A. <span style="font-weight:400; color:#6b7280;">• comprador verificado</span>
-      </p>
-    </div>
-  </div>
-</section>
     </div>
     <div class="mockup">
-      <!-- Troque a imagem abaixo pela capa do seu ebook (coloque o arquivo no repositório e ajuste o src) -->
       <img src="nova-imagem.png" alt="Capa do ebook Emagreça em 30 Dias">
-    </div> 
-    
-</header>
-<!-- SCRIPT DO CRONÔMETRO -->
-  <script>
-  function startTimer(duration, display) {
-      let timer = duration, minutes, seconds;
-      setInterval(function () {
-          minutes = parseInt(timer / 60, 10);
-          seconds = parseInt(timer % 60, 10);
-
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-
-          display.textContent = minutes + ":" + seconds;
-
-          if (--timer < 0) {
-              timer = duration; // reinicia quando chega a zero
-          }
-      }, 1000);
-  }
-
-  window.onload = function () {
-      let tenMinutes = 60 * 10, // 10 minutos
-          display = document.querySelector('#timer');
-      startTimer(tenMinutes, display);
-  };
-  </script>
-
-<!-- O que você vai aprender -->
-<section>
+    </div>
+  </div>
+</header><section>
   <div class="container grid-3">
     <div class="card">
       <h2>O que você vai aprender</h2>
@@ -218,110 +126,60 @@
       <ul class="check">
         <li>Guia de 30 dias com metas semanais.</li>
         <li>Lista de compras + cardápios prontos.</li>
-        <li>Suporte por email (opcional).</li>
+        <li>Suporte por e‑mail (opcional).</li>
       </ul>
     </div>
   </div>
-</section>
-
-<!-- Depoimentos -->
-<section style="background:#fff5f6">
+</section><section style="background:#fff5f6">
   <div class="container">
     <h2>Resultados de quem aplicou</h2>
     <div class="testi">
-      <div class="t">
-        <div class="nota">★★★★★</div>
-        <p>“perdi 4,8 kg em apenas 4 semanas!o melhor é que consegui encaixar tudo mesmo com minha rotina de trabalho e filhos. nunca achei que seria tão simples.”</p>
-        <div class="nome">— Larissa M.</div>
-      </div>
-      <div class="t">
-        <div class="nota">★★★★★</div>
-        <p>“Sempre começava dietas e desistia em poucos dias. Com o plano do ebook foi diferente: consegui seguir tudo de forma simples, sem sacrifícios. Pela primeira vez estou criando constância e já perdi 3,2 kg!”</p>
-        <div class="nome">— Paulo R.</div>
-      </div>
-      <div class="t">
-        <div class="nota">★★★★★</div>
-        <p>“O cronograma semanal me deu disciplina. Antes eu ficava perdida sem saber o que comer ou treinar, agora tenho um passo a passo. Além do peso que já perdi, minha ansiedade diminuiu bastante.”</p>
-        <div class="nome">— Camila S.</div>
-      </div>
+      <div class="t"><div class="nota">★★★★★</div><p>“Perdi 4,8 kg em apenas 4 semanas! O melhor é que consegui encaixar tudo mesmo com minha rotina de trabalho e filhos. Nunca achei que seria tão simples.”</p><div class="nome">— Larissa M.</div></div>
+      <div class="t"><div class="nota">★★★★★</div><p>“Sempre começava dietas e desistia em poucos dias. Com o plano do ebook foi diferente: segui tudo de forma simples, sem sacrifícios. Pela primeira vez criei constância e já perdi 3,2 kg!”</p><div class="nome">— Paulo R.</div></div>
+      <div class="t"><div class="nota">★★★★★</div><p>“O cronograma semanal me deu disciplina. Antes eu ficava perdida sem saber o que comer ou treinar; agora tenho um passo a passo. Além do peso que já perdi, minha ansiedade diminuiu bastante.”</p><div class="nome">— Camila S.</div></div>
     </div>
   </div>
-</section>
-
-<!-- Garantia -->
-<section>
+</section><section>
   <div class="container card">
     <h2>Garantia incondicional de 7 dias</h2>
     <p>Se dentro de 7 dias você achar que o ebook não é para você, devolvemos 100% do valor. Sem perguntas.</p>
   </div>
-</section>
-
-<!-- FAQ -->
-<section>
+</section><section>
   <div class="container">
     <h2>Dúvidas frequentes</h2>
-    <details>
-      <summary>Em quanto tempo vejo resultados?</summary>
-      <p>Você pode notar mudanças já na 1ª semana (energia, disposição, desinchaço). A perda de peso varia de pessoa para pessoa.</p>
-    </details>
-    <details>
-      <summary>Preciso de equipamentos?</summary>
-      <p>Não. Os treinos propostos podem ser feitos com o peso do corpo e espaço reduzido.</p>
-    </details>
-    <details>
-      <summary>O ebook serve para iniciantes?</summary>
-      <p>Sim. O método foi pensado para quem quer começar e manter consistência.</p>
-    </details>
-    <details>
-      <summary>Como recebo o material?</summary>
-      <p>Após o pagamento, o acesso é liberado imediatamente por email e página de download.</p>
-    </details>
+    <details><summary>Em quanto tempo vejo resultados?</summary><p>Você pode notar mudanças já na 1ª semana (energia, disposição, desinchaço). A perda de peso varia de pessoa para pessoa.</p></details>
+    <details><summary>Preciso de equipamentos?</summary><p>Não. Os treinos propostos podem ser feitos com o peso do corpo e em espaço reduzido.</p></details>
+    <details><summary>O ebook serve para iniciantes?</summary><p>Sim. O método foi pensado para quem quer começar e manter consistência.</p></details>
+    <details><summary>Como recebo o material?</summary><p>Após o pagamento, o acesso é liberado imediatamente por e‑mail e página de download.</p></details>
   </div>
-</section>
-
-<!-- CTA final (sticky) -->
-<div class="sticky-cta">
-  <a class="cta" href="https://pay.hotmart.com/H101662874C?off=icfylr35">Quero começar hoje mesmo</a>
-</div>
-
-<footer>
+</section><div class="sticky-cta"><a class="cta" href="https://pay.hotmart.com/H101662874C?off=icfylr35&utm_source=tiktok&utm_medium=bio&utm_campaign=lancamento" target="_blank" rel="nofollow noopener">Quero começar hoje mesmo</a></div><footer>
   <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
     <small>© <span id="ano"></span> Emagreça em 30 Dias. Todos os direitos reservados.</small>
-    <small>
-      <a href="politica.html">Política de Privacidade</a> ·
-      <a href="termos.html">Termos de Uso</a>
-    </small>
+    <small><a href="politica.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a></small>
   </div>
-</footer>
+</footer><div class="prova-social" id="provaSocial"></div><script>
+(function(){
+  const DURACAO_MINUTOS=10,CHAVE='timer_fim_v1';
+  const el=document.getElementById('timer');
+  function reprogramar(){const nf=Date.now()+DURACAO_MINUTOS*60*1000;localStorage.setItem(CHAVE,nf);return nf;}
+  let fim=Number(localStorage.getItem(CHAVE));if(!fim)fim=reprogramar();
+  function tick(){const r=Math.max(0,fim-Date.now());let m=String(Math.floor(r/60000)).padStart(2,'0');let s=String(Math.floor((r%60000)/1000)).padStart(2,'0');el.textContent=${m}:${s};if(r<=0)fim=reprogramar();}
+  tick();setInterval(tick,250);
+})();
 
-<script>
-  // Cronômetro regressivo (10 minutos por padrão)
-  (function(){
-    const DURACAO_MINUTOS = 10; // ajuste se quiser
-    const chave = 'timer_fim';
-    let fim = localStorage.getItem(chave);
-    if(!fim){
-      fim = Date.now() + DURACAO_MINUTOS*60*1000;
-      localStorage.setItem(chave, fim);
-    }
-    const el = document.getElementById('timer');
-    const tick = () => {
-      const restante = Math.max(0, Number(localStorage.getItem(chave)) - Date.now());
-      const m = String(Math.floor(restante/60000)).padStart(2,'0');
-      const s = String(Math.floor((restante%60000)/1000)).padStart(2,'0');
-      el.textContent = ${m}:${s};
-      if(restante<=0){
-        // reinicia o contador para criar urgência contínua
-        const novoFim = Date.now() + DURACAO_MINUTOS*60*1000;
-        localStorage.setItem(chave, novoFim);
-      }
-    };
-    tick(); setInterval(tick, 250);
-  })();
+// Ano automático
+ document.getElementById('ano').textContent=new Date().getFullYear();
 
-  // Ano automático no rodapé
-  document.getElementById('ano').textContent = new Date().getFullYear();
-</script>
-
-</body>
+// Prova social: vendas recentes
+const msgs=[
+  'Maria de SP comprou agora mesmo ✅',
+  'João do RJ garantiu o ebook há 2 min ⏰',
+  'Carla de MG finalizou a compra há 5 min 🎉',
+  'Paulo de DF aproveitou o desconto há 7 min 🔥'
+];
+let i=0;
+function mostrar(){const box=document.getElementById('provaSocial');box.textContent=msgs[i];box.style.display='block';setTimeout(()=>{box.style.display='none';},4500);i=(i+1)%msgs.length;}
+setInterval(mostrar,8000);
+})();
+</script></body>
 </html>
